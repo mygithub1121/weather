@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Weather App(PetProject)</title>
+</head>
+
+<body id="ch_theme">
+	<div class="dialog_window" id="dialog_window" style="display: none">
+		<div class="dialog_form">
+			<div class="form_text">
+				<h3 class="enter_data">Enter data of your city!</h3>
+				<input type="text" placeholder="Write name of city" title="Write city name!" id="city_form_name" />
+				<input type="number" placeholder="Temperature" title="Write number of your temperature!" id="temperature" />
+				<input type="number" placeholder="Humidity" id="humidity" title="Write number of your humidity!" />
+				<input type="number" placeholder="Wind Speed (m/s)" id="wind" title="Write the speed of your wind! (m/s)" />
+				<div class="submit_button"><input type="submit" id="submit" /></div>
+				<button class="close_form" id="close_form">
+					<img src="/images/assets2/close.png" class="close_img" />
+				</button>
+			</div>
+		</div>
+	</div>
+	<section class="all-weather-block">
+		<div class="week-weather-block" style="display: none;">
+			<div class="week-content">
+				<h4 id="h1_week">Week Weather</h4>
+				<div class="week-weather-list" id="wl">
+					<div data-number='1' id='div_day' class='day1'>
+						<img src='' class='week-imgs' id="wi1" />
+						<h3 class="week-temp" id="tempC1"></h3>
+						<h1 class="week-data" id="wd1"></h1>
+					</div>
+					<div data-number='2' id='div_day' class='day2'>
+						<img src='' class='week-imgs' id='wi2' />
+						<h3 class="week-temp" id="tempC2"></h3>
+
+						<h1 class="week-data" id="wd2"></h1>
+					</div>
+					<div data-number='3' id='div_day' class='day3'>
+						<img src='' class='week-imgs' id='wi3' />
+						<h3 class="week-temp" id="tempC3"></h3>
+
+						<h1 class="week-data" id="wd3"></h1>
+					</div>
+					<div data-number='4' id='div_day' class='day4'>
+						<img src='' class='week-imgs' id='wi4' />
+						<h3 class="week-temp" id="tempC4"></h3>
+
+						<h1 class="week-data" id="wd4"></h1>
+					</div>
+					<div data-number='5' id='div_day' class='day5'>
+						<img src='' class='week-imgs' id='wi5' />
+						<h3 class="week-temp" id="tempC5"></h3>
+
+						<h1 class="week-data" id="wd5"></h1>
+					</div>
+					<div data-number='6' id='div_day' class='day6'>
+						<img src='' class='week-imgs' id='wi6' />
+						<h3 class="week-temp" id="tempC6"></h3>
+
+						<h1 class="week-data" id="wd6"></h1>
+					</div>
+					<div data-number='7' id='div_day' class='day7'>
+						<img src='' class='week-imgs' id='wi7' />
+						<h3 class="week-temp" id="tempC7"></h3>
+
+						<h1 class="week-data" id="wd7"></h1>
+					</div>
+
+				</div>
+				<!--<div class="current-city">
+					<h1 id="current-city-name">Kyiv</h1>
+				</div>*/-->
+			</div>
+		</div>
+
+		<div class="form">
+			<div class="search-block">
+				<input type="text" class="search-line" id="search-line" spellcheck="false" placeholder="Enter your location" />
+				<button class="search-button" id="search-button">
+					<img src="/images/assets2/search.png" id="sr-button" />
+				</button>
+			</div>
+			<div class="open-side">
+				<div class="side-img">
+					<img src="/images/assets2/lf1.png" class="left-side" />
+					<img src="/images/assets2/rg1.png" class="right-side" />
+				</div>
+			</div>
+			<div class="side-help">
+				<h5>Тижднева Погода</h5>
+				<h5>Збережені Міста</h5>
+			</div>
+			<div class="middle-block">
+				<div class="weather_img">
+					<img src="" class="weather-icon" id="weather-icon" />
+				</div>
+				<div class="temperature_form">
+					<h1 id="temperature_celsius">22°C</h1>
+				</div>
+				<h1 id="city-h1" class="city-h1"></h1>
+			</div>
+			<div class="hw-container">
+				<div class="humidity">
+					<img class="humidity_icon" src="/images/assets2/humidity.png" />
+					<h1 class="humidity_value" id="humidity_value">91%</h1>
+					<h1 class="humidity_h1">Humidity</h1>
+				</div>
+				<div class="wind">
+					<img class="wind_icon" src="/images/assets2/Wind1.png" />
+					<h1 class="wind_speed" id="wind_speed">15km/h</h1>
+					<h1 class="wind_h1">Wind</h1>
+				</div>
+			</div>
+		</div>
+		<div class="hour-content" id="hcontent">
+			<div id='hour-block' class="hc1"><img src="" id="himg1">
+				<h4 class="hour-wind-speed" id="hws1">6m/s</h4>
+				<h4 class="hour-time" id="ht1">00:00</h4>
+			</div>
+			<div id='hour-block' class="hc2"><img src="" id="himg2">
+				<h4 class="hour-wind-speed" id="hws2">6m/s</h4>
+				<h4 class="hour-time" id="ht2">01:00</h4>
+			</div>
+			<div id='hour-block' class="hc3"><img src="" id="himg3">
+				<h4 class="hour-wind-speed" id="hws3">6m/s</h4>
+				<h4 class="hour-time" id="ht3">02:00</h4>
+			</div>
+			<div id='hour-block' class="hc4"><img src="" id="himg4">
+				<h4 class="hour-wind-speed" id="hws4">6m/s</h4>
+				<h4 class="hour-time" id="ht4">03:00</h4>
+			</div>
+			<div id='hour-block' class="hc5"><img src="" id="himg5">
+				<h4 class="hour-wind-speed" id="hws5">6m/s</h4>
+				<h4 class="hour-time" id="ht5">04:00</h4>
+			</div>
+			<div id='hour-block' class="hc6"><img src="" id="himg6">
+				<h4 class="hour-wind-speed" id="hws6">6m/s</h4>
+				<h4 class="hour-time" id="ht6">05:00</h4>
+			</div>
+			<div id='hour-block' class="hc7"><img src="" id="himg7">
+				<h4 class="hour-wind-speed" id="hws7">6m/s</h4>
+				<h4 class="hour-time" id="ht7">06:00</h4>
+			</div>
+			<div id='hour-block' class="hc8"><img src="" id="himg8">
+				<h4 class="hour-wind-speed" id="hws8">6m/s</h4>
+				<h4 class="hour-time" id="ht8">07:00</h4>
+			</div>
+			<div id='hour-block' class="hc9"><img src="" id="himg9">
+				<h4 class="hour-wind-speed" id="hws9">6m/s</h4>
+				<h4 class="hour-time" id="ht9">08:00</h4>
+			</div>
+			<div id='hour-block' class="hc10"><img src="" id="himg10">
+				<h4 class="hour-wind-speed" id="hws10">6m/s</h4>
+				<h4 class="hour-time" id="ht10">09:00</h4>
+			</div>
+			<div id='hour-block' class="hc11"><img src="" id="himg11">
+				<h4 class="hour-wind-speed" id="hws11">6m/s</h4>
+				<h4 class="hour-time" id="ht11">10:00</h4>
+			</div>
+			<div id='hour-block' class="hc12"><img src="" id="himg12">
+				<h4 class="hour-wind-speed" id="hws12">6m/s</h4>
+				<h4 class="hour-time" id="ht12">11:00</h4>
+			</div>
+			<div id='hour-block' class="hc13"><img src="" id="himg13">
+				<h4 class="hour-wind-speed" id="hws13">6m/s</h4>
+				<h4 class="hour-time" id="ht13">12:00</h4>
+			</div>
+			<div id='hour-block' class="hc14"><img src="" id="himg14">
+				<h4 class="hour-wind-speed" id="hws14">6m/s</h4>
+				<h4 class="hour-time" id="ht14">13:00</h4>
+			</div>
+			<div id='hour-block' class="hc15"><img src="" id="himg15">
+				<h4 class="hour-wind-speed" id="hws15">6m/s</h4>
+				<h4 class="hour-time" id="ht15">14:00</h4>
+			</div>
+			<div id='hour-block' class="hc16"><img src="" id="himg16">
+				<h4 class="hour-wind-speed" id="hws16">6m/s</h4>
+				<h4 class="hour-time" id="ht16">15:00</h4>
+			</div>
+			<div id='hour-block' class="hc17"><img src="" id="himg17">
+				<h4 class="hour-wind-speed" id="hws17">6m/s</h4>
+				<h4 class="hour-time" id="ht17">16:00</h4>
+			</div>
+			<div id='hour-block' class="hc18"><img src="" id="himg18">
+				<h4 class="hour-wind-speed" id="hws18">6m/s</h4>
+				<h4 class="hour-time" id="ht18">17:00</h4>
+			</div>
+			<div id='hour-block' class="hc19"><img src="" id="himg19">
+				<h4 class="hour-wind-speed" id="hws19">6m/s</h4>
+				<h4 class="hour-time" id="ht19">18:00</h4>
+			</div>
+			<div id='hour-block' class="hc20"><img src="" id="himg20">
+				<h4 class="hour-wind-speed" id="hws20">6m/s</h4>
+				<h4 class="hour-time" id="ht20">19:00</h4>
+			</div>
+			<div id='hour-block' class="hc21"><img src="" id="himg21">
+				<h4 class="hour-wind-speed" id="hws21">6m/s</h4>
+				<h4 class="hour-time" id="ht21">20:00</h4>
+			</div>
+			<div id='hour-block' class="hc22"><img src="" id="himg22">
+				<h4 class="hour-wind-speed" id="hws22">6m/s</h4>
+				<h4 class="hour-time" id="ht22">21:00</h4>
+			</div>
+			<div id='hour-block' class="hc23"><img src="" id="himg23">
+				<h4 class="hour-wind-speed" id="hws23">6m/s</h4>
+				<h4 class="hour-time" id="ht23">22:00</h4>
+			</div>
+			<div id='hour-block' class="hc24"><img src="" id="himg24">
+				<h4 class="hour-wind-speed" id="hws24">6m/s</h4>
+				<h4 class="hour-time" id="ht24">23:00</h4>
+			</div>
+		</div>
+		<div class="city_list">
+			<div class="city_form" style="display: none">
+				<div class="input_city_name" id="input_city_name">
+					<h1 id="saved_city">Saved City Weather</h1>
+					<button class="add_city_img" id="add_city_img">
+						<img src="/images/assets2/add.png" id="add_city" />
+					</button>
+				</div>
+				<div id="city_form">
+					<form class="form_back" id="div_city_form"></form>
+				</div>
+				<div class="datatime">
+					<h1 id="datatime-h1"></h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="/js/fetch.js"></script>
+	<script type='module' src="/js/all_system.js"></script>
+	<script type="module" src="/js/week.js"></script>
+</body>
+
+</html>
