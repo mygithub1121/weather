@@ -1,3 +1,8 @@
+@media only screen and (min-height:650px) and (max-height:700px){
+	.hour-content{
+		transform: translateY(100px);
+	}
+}
 @media only screen and (width: 375px) {
 	.side-help h5 {
 		display: none;
@@ -155,7 +160,28 @@
 		align-items: center;
 	}
 }
-@media screen and (min-width: 425px) and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 767px) {
+	.hw-container {
+		flex-direction: column;
+		transform: translateY(-65px);
+		gap: 0px;
+	}
+	.search-button {
+		width: 40%;
+	}
+	.wind {
+		margin: -20px 122px;
+	}
+	.humidity_h1,
+	.humidity_icon,
+	.humidity_value {
+		top: -30px;
+	}
+	.humidity_icon,
+	.wind_icon {
+		transform: translateY(-11px);
+	}
+
 	.side-help h5 {
 		display: none;
 	}
@@ -181,7 +207,7 @@
 	.city_form {
 		position: fixed;
 		top: 800px;
-		left: 130px;
+		left: 30px;
 		width: 80%;
 		margin: 0 auto;
 		align-items: center;
@@ -217,7 +243,7 @@
 		align-items: center;
 	}
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 	.all-weather-block {
 		margin: 0 auto;
 		width: 80%;
@@ -249,12 +275,13 @@
 
 @media screen and (width: 1024px) {
 	#hcontent {
-		transform: translateX(100px) translateY(-60px);
+		transform: translateX(30px) translateY(150px);
+		width: 90%;
 	}
 }
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
 	#hcontent {
-		transform: translateX(165px) translateY(150px);
+		transform: translateX(105px) translateY(-70px);
 		width: 60%;
 	}
 }
@@ -263,8 +290,6 @@
 		transform: translateX(-50px) translateY(-340px);
 	}
 }
-
-
 
 * {
 	background-color: #f1f1f1;
@@ -809,7 +834,7 @@ body {
 
 .hour-content {
 	height: 100px;
-	width: 70%;
+	width: 38%;
 	border-radius: 10px;
 	margin: 0 auto;
 	gap: 10px;

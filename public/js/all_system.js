@@ -129,10 +129,18 @@ document.addEventListener('DOMContentLoaded', function () { // Клік на п�
 
     // Відкриття форми додавання нового міста при кліку на відповідну іконку
     document.getElementById('add_city_img').onclick = function (event) {
-        let coordY = event.pageY
-        let cityCharBlock = document.querySelector('.dialog_window')
-        cityCharBlock.style.top = (coordY - 270) + 'px'
-        console.log(coordY)
+        const minWidth = 320;
+        const maxWidth = 768;
+        const currentWidth = window.innerWidth;
+
+        if (currentWidth >= minWidth && currentWidth <= maxWidth) {
+            let coordY = event.pageY;
+            let cityCharBlock = document.querySelector('.dialog_window');
+            cityCharBlock.style.top = (coordY - 270) + 'px';
+            console.log(coordY);
+        }
+
+        let dialogWindowStyle = document.querySelector('.dialog_window');
         if (dialogWindowStyle.style.display === 'none') {
             dialogWindowStyle.style.display = 'block';
         }
@@ -143,9 +151,9 @@ document.addEventListener('DOMContentLoaded', function () { // Клік на п�
             document.getElementById('city_form_name').value = '';
             document.getElementById('wind').value = '';
             document.getElementById('humidity').value = '';
+
         })
     }
-
     // Виклик функції зміни інформації про погоду при кліку на кнопку пошуку
     document.getElementById('search-button').onclick = all_change;
 });
