@@ -1,6 +1,6 @@
 @media only screen and (min-height: 650px) and (max-height: 700px) {
 	.hour-content {
-		transform: translateY(100px);
+		transform: translateY(-100px);
 	}
 }
 
@@ -166,6 +166,8 @@
 		flex-direction: column;
 		transform: translateY(-65px);
 		gap: 0px;
+		position: relative;
+		right: -10%;
 	}
 	.search-button {
 		width: 40%;
@@ -200,7 +202,7 @@
 	.week-weather-block {
 		position: absolute;
 		bottom: -750px;
-		left: 130px;
+		left: 38px;
 	}
 	.div_city_form {
 		height: 100%;
@@ -275,13 +277,35 @@
 }
 
 @media screen and (width: 1024px) {
-	.side-help h5{
+	.hw-container {
+		flex-direction: column;
+		transform: translateY(-65px) translateX(95px);
+		gap: 0px;
+
+	}
+	.search-button {
+		width: 40%;
+	}
+	.wind {
+		margin: -20px 122px;
+	}
+	.humidity_h1,
+	.humidity_icon,
+	.humidity_value {
+		top: -30px;
+	}
+	.humidity_icon,
+	.wind_icon {
+		transform: translateY(-11px);
+	}
+
+	.side-help h5 {
 		display: none;
 	}
 	.all-weather-block {
 		margin: 0 auto;
 		width: 80%;
-		gap: 30px;
+		gap: 90px;
 		transform: translateX(-21px);
 	}
 
@@ -289,18 +313,18 @@
 		transform: translateX(90px) translateY(160px);
 		width: 60%;
 	}
-	.city_form{
+	.city_form {
 		margin-right: 30px;
 	}
-	.week-weather-block{
+	.week-weather-block {
 		margin-left: 30px;
 	}
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
 	#hcontent {
-		transform: translateX(105px) translateY(-70px);
-		width: 60%;
+		transform: translateX(118px) translateY(-70px);
+		width: 50%;
 	}
 }
 @media screen and (width: 1440px) {
@@ -313,6 +337,13 @@
 	#hcontent {
 		transform: translateX(90px) translateY(160px);
 		width: 60%;
+	}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2559px) {
+	#hcontent {
+		transform: translateX(105px) translateY(-120px);
+		width: 30%;
 	}
 }
 
@@ -450,6 +481,7 @@ body {
 	margin: 0 auto;
 	z-index: -100;
 	background: #f1f1f1;
+	gap: 10px;
 }
 
 .form {
