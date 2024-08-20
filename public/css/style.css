@@ -908,8 +908,8 @@ body {
 
 .week-weather-list div {
 	align-items: center;
-	height: 100%;
 	color: gray;
+	height: 62px;
 	display: flex;
 	gap: 10px;
 }
